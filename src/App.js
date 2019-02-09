@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 
+const inProgess = [
+  {
+    title: "Do Codewars Challege ",
+    tags: [{type:Coding, color: blue},{type: daily, color: red }]
+  },
+  {
+
+  },
+  {
+
+  },
+]
+
 
 
 class App extends Component {
