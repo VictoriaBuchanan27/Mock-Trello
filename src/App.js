@@ -29,9 +29,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <List /> 
-       <List /> 
-       <List /> 
+       <List cards={inProgess}/> 
+       <List cards={inProgess}/> 
+       <List cards={inProgess}/> 
       </div>
     );
   }
