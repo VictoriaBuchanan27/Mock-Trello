@@ -2,9 +2,12 @@ import React from 'react';
 import './cards.css';
 import Tag from './tags';
 
+
+
 const Cards = (props)=>{
     return(
         <div className ='task'>
+        <span className = 'task-title'>{props.title}</span>
         <div className = 'card-holder'>
         {
             props.tags.map((e,i)=>{
@@ -12,7 +15,7 @@ const Cards = (props)=>{
             })
         }
         </div>
-        <span className = 'task-title'>{props.title}</span>
+        
         </div>
     );
 }

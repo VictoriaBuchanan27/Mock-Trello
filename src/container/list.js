@@ -9,7 +9,7 @@ class List extends React.Component {
         super(props);
 
         this.state = {
-            title: "In Progress",
+            title: this.props.title,
             editMode: false
         }
     }
@@ -22,23 +22,26 @@ class List extends React.Component {
             this.setState({ editMode: false });
         }
     }
-    titleChange =(e)=>{
-        this.setState({title: e.target.value})
+    TitleChange = (e) => {
+        this.setState({ title: e.target.value })
     }
 
     render() {
-
         const editMode = this.state.editMode ?
-                <><input type = "text" value = {this.state.title} onChange={this.titleChange}/><button onClick={this.toggleEditMode}>save</button></>
-                : <h4 onDoubleClick={this.toggleEditMode}>{this.state.title}</h4>;
+            <div>
+                <input type="text" value={this.state.title} onChange={this.titleChange} />
+                <button onClick={this.toggleEditMode}>save</button>
+            </div>
+            : <h4 onDoubleClick={this.toggleEditMode}>{this.state.title}</h4>;
         return (
             <div className='list'>
-             {editMode}
-            {this.props.cards.map((e,i)=>{
-                return <Cards title ={e.title} tags={e.tags} key={i} />;
+                {editMode}
+                {this.props.cards.map((e, i) => {
+                    console.log('e', e )
+                    return <Cards title={e.title} tags={e.tags} key={i} />;
                 })
-            }
-             
+                }
+
             </div>
 
         );
