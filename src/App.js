@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import List from './container/list';
+import Nav from './components/nav'
 
 const inProgess = [
     {
@@ -43,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <NavBar /> */}
+        < Nav />
         <List cards={next} title="Next" />
         <List cards={inProgess} title = "In Progress"/>
         <List cards={completed} title= "Completed"/>
