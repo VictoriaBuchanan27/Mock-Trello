@@ -5,7 +5,7 @@ import { ItemTypes } from './Constants';
 const cardSource = {
   beginDrag(props) {
     return {
-      text: props.text
+      cards: props.cards
     };
   }
 };
@@ -18,10 +18,10 @@ function collect(connect, monitor) {
   };
 }
 
-function Card({ isDragging, connectDragSource, text }) {
+function Card({ isDragging, connectDragSource, cards }) {
   return connectDragSource(
     <div style={{ opacity: isDragging ? 0.5 : 1 }}>
-      {text}
+      {cards}
     </div>
   );
 }
